@@ -1,16 +1,12 @@
-# submission_kitari
+# Pakaian Adat Indonesia
 
-A new Flutter project.
+Just write command on terminal `flutter analyze` and then `flutter run -d chrome` for run on Chrome Browser.
 
-## Getting Started
+## Picture App
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p align="center">
+<span>
+    <img width=45% src="images/showcase1.png" alt="Homepage">
+    <img width=45% src="images/showcase2.png" alt="Detail Page">
+</span>
+</p>

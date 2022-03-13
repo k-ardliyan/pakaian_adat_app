@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:submission_kitari/splash_screen.dart';
+import 'package:pakaian_adat_app/splash_screen.dart';
 
 void main() {
   runApp(MyApp());

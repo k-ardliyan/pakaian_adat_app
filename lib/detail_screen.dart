@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:submission_kitari/model/traditional_clothes.dart';
+import 'package:pakaian_adat_app/model/traditional_clothes.dart';
 
 class DetailScreen extends StatelessWidget {
   final TraditionalClothes item;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:submission_kitari/traditionalClothesList.dart';
+import 'package:pakaian_adat_app/traditional_clothes_list.dart';
 import 'detail_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -107,7 +107,7 @@ Widget appHeader(BuildContext context) {
                 content: Text(
                     'Sumber gambar dan isi konten adalah dari Internet.\nNantikan fitur lainnya segera.'),
                 actions: [
-                  FlatButton(
+                  TextButton(
                       onPressed: () {
                         Navigator.of(context).pop();
                       },
