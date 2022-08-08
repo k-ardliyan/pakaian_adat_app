@@ -7,6 +7,8 @@ Just write command on terminal `flutter analyze` and then `flutter run -d chrome
 <p align="center">
 <span>
     <img width=45% src="images/showcase1.png" alt="Homepage">
-    <img width=45% src="images/showcase2.png" alt="Detail Page">
+    <img width=45% src="images/showcase2.png" alt="Detail Page Ringkasan">
+    <img width=45% src="images/showcase3.png" alt="Detail Page Lokasi">
+    <img width=45% src="images/showcase4.png" alt="Detail Page Foto">
 </span>
 </p>
