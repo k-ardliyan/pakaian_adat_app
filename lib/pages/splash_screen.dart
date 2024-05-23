@@ -4,11 +4,13 @@ import 'package:page_transition/page_transition.dart';
 import 'package:pakaian_adat_app/pages/home_screen.dart';
 
 class SplashScreenHome extends StatelessWidget {
+  const SplashScreenHome({super.key});
+
   @override
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
       splash: 'images/splash.png',
-      nextScreen: HomeScreen(),
+      nextScreen: const HomeScreen(),
       splashTransition: SplashTransition.fadeTransition,
       pageTransitionType: PageTransitionType.fade,
       backgroundColor: Colors.white,

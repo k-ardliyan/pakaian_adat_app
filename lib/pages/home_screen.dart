@@ -3,6 +3,8 @@ import 'package:pakaian_adat_app/data/traditional_clothes_list.dart';
 import 'package:pakaian_adat_app/pages/detail_screen.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,7 +14,7 @@ class HomeScreen extends StatelessWidget {
               delegate: SliverChildListDelegate(
                   [appHeader(context), backgroundHeader()])),
           SliverPadding(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             sliver: SliverGrid.count(
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
@@ -25,7 +27,7 @@ class HomeScreen extends StatelessWidget {
                     children: <Widget>[
                       // Text
                       Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             gradient: LinearGradient(
                                 begin: Alignment.bottomCenter,
                                 end: Alignment.topCenter,
@@ -57,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                           children: <Widget>[
                             Text(
                               item.province,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontFamily: 'Raleway',
                                   fontSize: 20,
                                   fontWeight: FontWeight.w700,
@@ -65,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                             ),
                             Text(
                               item.island,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontFamily: 'Raleway',
                                   fontSize: 13,
                                   fontWeight: FontWeight.w300,
@@ -87,39 +89,37 @@ class HomeScreen extends StatelessWidget {
 }
 
 Widget appHeader(BuildContext context) {
-  return Container(
-    child: AppBar(
-      title: Text(
-        "Pakaian Adat Indonesia",
-        style: TextStyle(fontFamily: 'Grand Hotel', fontSize: 30),
-      ),
-      centerTitle: true,
-      backgroundColor: Colors.redAccent,
-      actions: <Widget>[
-        IconButton(
-          icon: Icon(Icons.info_outline),
-          onPressed: () {
-            showDialog(
-              context: context,
-              barrierDismissible: false,
-              builder: (_) => AlertDialog(
-                title: Text('Informasi'),
-                content: Text(
-                    'Sumber gambar dan isi konten adalah dari Internet.\nNantikan fitur lainnya segera.'),
-                actions: [
-                  TextButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: Text('Oke'))
-                ],
-              ),
-            );
-          },
-          tooltip: 'Info',
-        ),
-      ],
+  return AppBar(
+    title: const Text(
+      "Pakaian Adat Indonesia",
+      style: TextStyle(fontFamily: 'Grand Hotel', fontSize: 30),
     ),
+    centerTitle: true,
+    backgroundColor: Colors.redAccent,
+    actions: <Widget>[
+      IconButton(
+        icon: const Icon(Icons.info_outline),
+        onPressed: () {
+          showDialog(
+            context: context,
+            barrierDismissible: false,
+            builder: (_) => AlertDialog(
+              title: const Text('Informasi'),
+              content: const Text(
+                  'Sumber gambar dan isi konten adalah dari Internet.\nNantikan fitur lainnya segera.'),
+              actions: [
+                TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: const Text('Oke'))
+              ],
+            ),
+          );
+        },
+        tooltip: 'Info',
+      ),
+    ],
   );
 }
 
@@ -127,12 +127,12 @@ Widget backgroundHeader() {
   return Container(
       width: double.infinity,
       height: 200,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           color: Colors.redAccent,
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(40),
               bottomRight: Radius.circular(40))),
-      child: Padding(
+      child: const Padding(
         padding: EdgeInsets.only(top: 70, left: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

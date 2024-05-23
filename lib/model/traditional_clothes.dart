@@ -8,11 +8,13 @@ class TraditionalClothes {
   List<String> imageUrls;
 
   TraditionalClothes(
-      {this.province,
-      this.island,
-      this.description,
-      this.imageIsland,
-      this.imageIslandLogo,
-      this.imageAsset,
-      this.imageUrls});
+      {
+        required this.province,
+        required this.island,
+        required this.description,
+        required this.imageIsland,
+        required this.imageIslandLogo,
+        required this.imageAsset,
+        required this.imageUrls
+      });
 }

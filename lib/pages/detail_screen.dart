@@ -4,14 +4,14 @@ import 'package:pakaian_adat_app/model/traditional_clothes.dart';
 class DetailScreen extends StatelessWidget {
   final TraditionalClothes item;
 
-  DetailScreen({@required this.item});
+  const DetailScreen({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
-    final List<String> _tabs = ['Ringkasan', 'Lokasi', 'Foto Lainnya'];
+    final List<String> tabs = ['Ringkasan', 'Lokasi', 'Foto Lainnya'];
     return Scaffold(
       body: DefaultTabController(
-        length: _tabs.length,
+        length: tabs.length,
         child: NestedScrollView(
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
@@ -32,7 +32,7 @@ class DetailScreen extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             gradient: LinearGradient(
                                 begin: Alignment.bottomCenter,
                                 end: Alignment.topCenter,
@@ -43,11 +43,11 @@ class DetailScreen extends StatelessWidget {
                             ])),
                       ),
                       FlexibleSpaceBar(
-                        titlePadding: EdgeInsets.only(bottom: 65),
+                        titlePadding: const EdgeInsets.only(bottom: 65),
                         centerTitle: true,
                         title: Text(
                           item.province,
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Colors.white,
                               fontSize: 20.0,
                               fontFamily: 'Raleway',
@@ -56,10 +56,10 @@ class DetailScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  actions: <Widget>[StarButton()],
+                  actions: const <Widget>[StarButton()],
                   bottom: TabBar(
                     indicatorColor: Colors.redAccent,
-                    tabs: _tabs.map((String name) => Tab(text: name)).toList(),
+                    tabs: tabs.map((String name) => Tab(text: name)).toList(),
                   ),
                 ),
               ),
@@ -85,7 +85,7 @@ class DetailScreen extends StatelessWidget {
                           Text(
                             item.description,
                             style:
-                                TextStyle(fontFamily: 'Raleway', fontSize: 16),
+                                const TextStyle(fontFamily: 'Raleway', fontSize: 16),
                           ),
                         ]),
                       ),
@@ -111,10 +111,10 @@ class DetailScreen extends StatelessWidget {
                         sliver: SliverList(
                           delegate: SliverChildListDelegate([
                             Text(
-                              'Bendera dan Lambang ' + item.province,
-                              style: TextStyle(fontFamily: 'Raleway'),
+                              'Bendera dan Lambang ${item.province}',
+                              style: const TextStyle(fontFamily: 'Raleway'),
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Image.network(
                               item.imageIslandLogo,
                               loadingBuilder:
@@ -126,18 +126,18 @@ class DetailScreen extends StatelessWidget {
                                             null
                                         ? loadingProgress
                                                 .cumulativeBytesLoaded /
-                                            loadingProgress.expectedTotalBytes
+                                            loadingProgress.expectedTotalBytes!
                                         : null,
                                   ),
                                 );
                               },
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Text(
-                              'Peta ' + item.province,
-                              style: TextStyle(fontFamily: 'Raleway'),
+                              'Peta ${item.province}',
+                              style: const TextStyle(fontFamily: 'Raleway'),
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Image.network(
                               item.imageIsland,
                               loadingBuilder:
@@ -149,7 +149,7 @@ class DetailScreen extends StatelessWidget {
                                             null
                                         ? loadingProgress
                                                 .cumulativeBytesLoaded /
-                                            loadingProgress.expectedTotalBytes
+                                            loadingProgress.expectedTotalBytes!
                                         : null,
                                   ),
                                 );
@@ -195,7 +195,7 @@ class DetailScreen extends StatelessWidget {
                                             null
                                         ? loadingProgress
                                                 .cumulativeBytesLoaded /
-                                            loadingProgress.expectedTotalBytes
+                                            loadingProgress.expectedTotalBytes!
                                         : null,
                                   ),
                                 );
@@ -234,7 +234,7 @@ Widget contentTab() {
                 mainAxisSpacing: 10,
                 crossAxisSpacing: 10,
                 childAspectRatio: 1,
-                children: [],
+                children: const [],
               ),
             ),
           ],
@@ -245,11 +245,13 @@ Widget contentTab() {
 }
 
 class StarButton extends StatefulWidget {
+  const StarButton({super.key});
+
   @override
-  _StarButtonState createState() => _StarButtonState();
+  StarButtonState createState() => StarButtonState();
 }
 
-class _StarButtonState extends State<StarButton> {
+class StarButtonState extends State<StarButton> {
   bool isStar = false;
 
   @override
